@@ -1881,7 +1881,9 @@
       canvases.push(canvas);
       canvases.forEach(function (canvas) {
         canvas.selectedItem = canvas.selectedItem || self.items[0];
-        document.getElementById(canvas.selectedItem.id).classList.add('selected');
+        if(document.getElementById(canvas.selectedItem.id)) {
+          document.getElementById(canvas.selectedItem.id).classList.add('selected');  
+        }
       });
     };
 
